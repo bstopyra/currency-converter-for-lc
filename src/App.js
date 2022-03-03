@@ -87,32 +87,26 @@ function App() {
   }
 
   return (
-    <div className="wrapper">
-      <div className="box">
-        <h1>Currency converter</h1>
-        <CurrencyRow
-          currencyOptions={currencyOptions}
-          selectedCurrency={fromCurrency}
-          onCurrencySelect={handleSetFromCurrency}
-          amount={fromAmount}
-          onChangeAmount={handleFromAmountChange}
-        />
-        <div className="equals">=</div>
-        <CurrencyRow
-          currencyOptions={currencyOptions}
-          selectedCurrency={toCurrency}
-          onCurrencySelect={handleSetToCurrency}
-          amount={toAmount}
-          onChangeAmount={handleToAmountChange}
-        />
-        <Button
-          style={{ width: "80%", margin: "10px" }}
-          kind="primary"
-          onClick={handlePutMessage}
-        >
-          Send the conversion
-        </Button>
-      </div>
+    <div className="box">
+      <h1>Currency converter</h1>
+      <CurrencyRow
+        currencyOptions={currencyOptions}
+        selectedCurrency={fromCurrency}
+        onCurrencySelect={handleSetFromCurrency}
+        amount={fromAmount}
+        onChangeAmount={handleFromAmountChange}
+      />
+      <div className="equals">=</div>
+      <CurrencyRow
+        currencyOptions={currencyOptions}
+        selectedCurrency={toCurrency}
+        onCurrencySelect={handleSetToCurrency}
+        amount={toAmount}
+        onChangeAmount={handleToAmountChange}
+      />
+      <Button className="send-button" kind="primary" onClick={handlePutMessage}>
+        Send the conversion
+      </Button>
     </div>
   );
 }
